@@ -1,0 +1,107 @@
+<div class="demo-container">
+    <h1>Data Binding - Demonstracija</h1>
+
+    <!-- Interpolation -->
+    <section class="demo-section">
+        <h2>1. Interpolation (Komponenta → Template)</h2>
+        <div class="example">
+            <h3>Prikaz varijabli u HTML-u</h3>
+            <p class="info-box">{{ naslov }}</p>
+            <p><strong>Trenutno vrijeme:</strong> {{ trenutnoVrijeme }}</p>
+            <button (click)="azurirajVrijeme()" class="btn">Ažuriraj vrijeme</button>
+            <div class="code-display">
+                <code>{{ '{{ naslov }}' }}</code>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Binding -->
+    <section class="demo-section">
+        <h2>2. Property Binding (Komponenta → Template)</h2>
+        <div class="example">
+            <h3>Postavljanje HTML svojstava</h3>
+            <img [src]="slikaUrl" alt="Primjer slike" class="demo-image" />
+            <div class="property-demo">
+                <input type="text" [placeholder]="inputPlaceholder" [disabled]="isDisabled" class="demo-input" />
+                <button (click)="toggleDisable()" class="btn">
+                    {{ isDisabled ? 'Omogući' : 'Onemogući' }} input
+                </button>
+            </div>
+            <div class="code-display">
+                <code>[src]="slikaUrl"</code><br>
+                <code>[disabled]="isDisabled"</code>
+            </div>
+        </div>
+    </section>
+
+    <!-- Event Binding -->
+    <section class="demo-section">
+        <h2>3. Event Binding (Template → Komponenta)</h2>
+        <div class="example">
+            <h3>Reagovanje na korisničke akcije</h3>
+            <div class="button-group">
+                <button (click)="klikniMe()" class="btn btn-primary">Klikni me!</button>
+                <button (click)="resetujBrojac()" class="btn btn-secondary">Resetuj</button>
+            </div>
+            <p class="result-box" *ngIf="poruka">{{ poruka }}</p>
+            <div class="counter-display">
+                <span class="counter">{{ brojKlikova }}</span>
+                <span class="counter-label">klikova</span>
+            </div>
+            <div class="code-display">
+                <code>(click)="klikniMe()"</code>
+            </div>
+        </div>
+    </section>
+
+    <!-- Two-Way Binding -->
+    <section class="demo-section">
+        <h2>4. Two-Way Binding (Komponenta ↔ Template)</h2>
+        <div class="example">
+            <h3>Sinhronizacija podataka</h3>
+            <form class="two-way-form">
+                <div class="form-group">
+                    <label for="username">Korisničko ime:</label>
+                    <input [(ngModel)]="korisnickoIme" name="username" id="username" type="text" class="demo-input"
+                        placeholder="Unesite korisničko ime" />
+                    <p class="live-preview">Unijeli ste: <strong>{{ korisnickoIme || '(prazan unos)' }}</strong></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input [(ngModel)]="email" name="email" id="email" type="email" class="demo-input"
+                        placeholder="Unesite email" />
+                    <p class="live-preview">Email: <strong>{{ email || '(prazan unos)' }}</strong></p>
+                </div>
+
+                <div class="form-group">
+                    <label for="komentar">Komentar:</label>
+                    <textarea [(ngModel)]="komentar" name="komentar" id="komentar" class="demo-textarea" rows="4"
+                        placeholder="Unesite vaš komentar"></textarea>
+                    <p class="live-preview">Komentar ({{ komentar.length }} karaktera):</p>
+                    <p class="comment-display">{{ komentar || '(prazan unos)' }}</p>
+                </div>
+            </form>
+            <div class="code-display">
+                <code>[(ngModel)]="korisnickoIme"</code>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kombinovani primjer -->
+    <section class="demo-section">
+        <h2>5. Kombinacija svih vrsta Data Binding-a</h2>
+        <div class="example">
+            <h3>Interaktivna forma</h3>
+            <div class="summary-box">
+                <h4>Sažetak unesenih podataka:</h4>
+                <ul>
+                    <li><strong>Korisničko ime:</strong> {{ korisnickoIme || 'nije uneseno' }}</li>
+                    <li><strong>Email:</strong> {{ email || 'nije uneseno' }}</li>
+                    <li><strong>Broj klikova:</strong> {{ brojKlikova }}</li>
+                    <li><strong>Komentar:</strong> {{ komentar || 'nije uneseno' }}</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>

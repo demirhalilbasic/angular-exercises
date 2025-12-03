@@ -1,0 +1,80 @@
+<div class="demo-container">
+    <h1>Angular Direktive - Demonstracija</h1>
+
+    <!-- Strukturne direktive -->
+    <section class="demo-section">
+        <h2>Strukturne Direktive</h2>
+
+        <!-- *ngIf -->
+        <div class="example">
+            <h3>1. *ngIf - Uslovni prikaz</h3>
+            <p *ngIf="isVisible" class="info-box">Ovaj tekst je vidljiv!</p>
+            <button (click)="toggleVisibility()" class="btn">Promijeni vidljivost</button>
+            <p class="status">Status: {{ isVisible ? 'Vidljiv' : 'Sakriven' }}</p>
+        </div>
+
+        <!-- *ngFor -->
+        <div class="example">
+            <h3>2. *ngFor - Iteracija kroz niz</h3>
+            <ul class="item-list">
+                <li *ngFor="let item of items; index as i" class="list-item">
+                    {{ i + 1 }}. {{ item }}
+                </li>
+            </ul>
+        </div>
+
+        <!-- *ngSwitch -->
+        <div class="example">
+            <h3>3. *ngSwitch - Višestruki uslov</h3>
+            <div [ngSwitch]="boja" class="switch-container">
+                <p *ngSwitchCase="'crvena'" class="color-box red">Odabrali ste crvenu boju.</p>
+                <p *ngSwitchCase="'plava'" class="color-box blue">Odabrali ste plavu boju.</p>
+                <p *ngSwitchCase="'zelena'" class="color-box green">Odabrali ste zelenu boju.</p>
+                <p *ngSwitchDefault class="color-box">Odabrali ste neku drugu boju.</p>
+            </div>
+            <div class="button-group">
+                <button (click)="promijeniBoju('crvena')" class="btn btn-red">Crvena</button>
+                <button (click)="promijeniBoju('plava')" class="btn btn-blue">Plava</button>
+                <button (click)="promijeniBoju('zelena')" class="btn btn-green">Zelena</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Atributske direktive -->
+    <section class="demo-section">
+        <h2>Atributske Direktive</h2>
+
+        <!-- ngClass -->
+        <div class="example">
+            <h3>4. ngClass - Dinamičke CSS klase</h3>
+            <p [ngClass]="{ 'crveni-tekst': isCrveno, 'plavi-tekst': !isCrveno }">
+                Ovo je dinamički stiliziran tekst.
+            </p>
+            <button (click)="toggleBoju()" class="btn">Promijeni boju</button>
+        </div>
+
+        <!-- ngStyle -->
+        <div class="example">
+            <h3>5. ngStyle - Inline stilovi</h3>
+            <p [ngStyle]="{ 'font-size': fontSize + 'px', 'color': stilBoja }">
+                Ovo je dinamički stiliziran tekst sa inline stilovima.
+            </p>
+            <button (click)="promijeniStil()" class="btn">Promijeni stil</button>
+            <p class="status">Font size: {{ fontSize }}px, Boja: {{ stilBoja }}</p>
+        </div>
+    </section>
+
+    <!-- Custom direktive -->
+    <section class="demo-section">
+        <h2>Custom Direktive</h2>
+
+        <!-- appHighlight -->
+        <div class="example">
+            <h3>6. appHighlight - Vlastita direktiva</h3>
+            <p appHighlight class="highlight-demo">
+                Pređi mišem preko ovog teksta da vidiš highlight efekat!
+            </p>
+            <p class="status">Ova direktiva mijenja pozadinu elementa na hover.</p>
+        </div>
+    </section>
+</div>
