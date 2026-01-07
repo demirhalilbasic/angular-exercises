@@ -773,9 +773,7 @@ ng build
 
 ## 👨‍💻 Autor
 
-**Demir Halilbasic**
-Web Programiranje 2025/2026
-Laboratorijske Vježbe 1, 2 i 3
+**Demir Halilbasic** | Web Programiranje 2025/2026 | Laboratorijske Vježbe 1, 2 i 3
 
 ---
 
