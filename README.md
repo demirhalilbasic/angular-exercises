@@ -97,9 +97,9 @@ For detailed documentation in Bosnian/Croatian/Serbian language, see [DOKUMENTAC
 
 ## 🎓 Academic Context
 
-**Course:** Web Programming 2024/2025  
-**Institution:** International Business-Information Academy (IPI Academy) Tuzla  
-**Laboratory Exercises:** 2 & 3  
+**Course:** Web Programming 2025/2026  
+**Institution:** International Business-Information Academy Tuzla  
+**Laboratory Exercises:** 1, 2 & 3  
 **Topics:** Angular Components, Routing, Directives & Data Binding
 
 ---
